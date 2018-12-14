@@ -4,7 +4,6 @@
     }
 
     &__button {
-
         background-color: $color-white;
         height: 7rem;
         width: 7rem;
@@ -13,6 +12,7 @@
         right: 6rem;
         border-radius: 50%;
         z-index: 200;
+        box-shadow: 0 2rem 3rem rgba($color-black, .1);
     }
 
     &__background {
@@ -24,8 +24,7 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 100;
-
-        transform: scale(80);
+        transition: transform .8s;
     }
 
     &__nav {
@@ -35,6 +34,8 @@
         top: 0;
         right: 0;
         z-index: 150;
+        display: none;
+        transition: all .8s;
 
     }
 
@@ -79,4 +80,13 @@
         }
         
     }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+       display: block;
+    }
+
 }
